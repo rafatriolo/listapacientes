@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="teste_info">
+        <meta charset="UTF-8">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-resource.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="pacientes.js"></script>
+    <script src="pacientesCtrl.js"></script>
+    <script src="pacientesSrv.js"></script>
+  </head>
+  <body>
+     <div ng-init="load()" ng-controller="ListaPacientes" class="container" style="margin-top:60px">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Listagem de Pacientes em Ordem Decrescente</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">       
+                    <thead>
+                        <th>Nome</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                        <th>Gordura</th>
+                        <th>IMC</th>
+                    </thead>           
+                    <tbody>
+                        <tr ng-repeat="registro in registros | orderBy: '-peso'">
+                            <td> {{registro.nome}} </td>
+                            <td> {{registro.peso}} </td>
+                            <td> {{registro.altura}} </td>
+                            <td> {{registro.gordura}} </td>
+                            <td> {{registro.imc}} </td>
+                        </tr>
+                    </tbody>        
+                </table>
+            </div>
+        </div>
+     </div>
+  </body>
+</html>
