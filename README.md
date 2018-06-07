@@ -1,2 +1,2 @@
 
-Teste Info Price - Lista de Pacientes
+Teste InfoPrice - Lista de Pacientes
